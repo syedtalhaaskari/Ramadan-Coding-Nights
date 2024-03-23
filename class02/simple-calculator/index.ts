@@ -1,3 +1,7 @@
+#! /usr/bin/env node
+
+// SHABANG
+
 import inquirer from 'inquirer';
 
 const answer = await inquirer.prompt([
@@ -15,7 +19,7 @@ const answer = await inquirer.prompt([
         message: 'Select one of the operators to perform action',
         type: 'list',
         name: 'operator',
-        choices: ['Addition', 'Subtraction', 'Multiplication', 'Division']
+        choices: ['Addition', 'Subtraction', 'Multiplication', 'Division', 'Remainder']
     },
 ]);
 
@@ -28,6 +32,8 @@ if (answer.operator === 'Addition') {
     console.log(`Your value is: ${answer.firstNumber * answer.secondNumber}`);
 } else if (answer.operator === 'Division') {
     console.log(`Your value is: ${answer.firstNumber / answer.secondNumber}`);
+} else if (answer.operator === 'Remainder') {
+    console.log(`Your value is: ${answer.firstNumber % answer.secondNumber}`);
 } else {
     console.log('Invalid Operation');
 }
