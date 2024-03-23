@@ -1,5 +1,4 @@
 import inquirer from 'inquirer';
-
 const answer = await inquirer.prompt([
     {
         message: 'Enter first number',
@@ -18,16 +17,16 @@ const answer = await inquirer.prompt([
         choices: ['Addition', 'Subtraction', 'Multiplication', 'Division']
     },
 ]);
-
 // conditional statement
 if (answer.operator === 'Addition') {
     console.log(`Your value is: ${answer.firstNumber + answer.secondNumber}`);
-} else if (answer.operator === 'Subtraction') {
+}
+else if (answer.operator === 'Subtraction') {
     console.log(`Your value is: ${answer.firstNumber - answer.secondNumber}`);
-} else if (answer.operator === 'Multiplication') {
+}
+else if (answer.operator === 'Multiplication') {
     console.log(`Your value is: ${answer.firstNumber * answer.secondNumber}`);
-} else if (answer.operator === 'Division') {
+}
+else {
     console.log(`Your value is: ${answer.firstNumber / answer.secondNumber}`);
-} else {
-    console.log('Invalid Operation');
 }
